@@ -1,51 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Chrono Hologram</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <style>
-        body { margin: 0; overflow: hidden; }
-        canvas { display: block; }
-    </style>
-</head>
-<body>
-    <script>
-        // Scene setup
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
+   <html>
+   <head>
+       <title>Chrono Hologram Interface</title>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+       <style>
+           body { margin: 0; overflow: hidden; }
+           canvas { display: block; }
+           #hud { position: fixed; top: 20px; left: 20px; color: #00f3ff; font-family: 'Orbitron', sans-serif; }
+       </style>
+   </head>
+   <body>
+       <div id="hud">SIMULATION ACTIVE</div>
+       <script>
+           // Scene setup
+           const scene = new THREE.Scene();
+           const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+           const renderer = new THREE.WebGLRenderer({ antialias: true });
+           renderer.setSize(window.innerWidth, window.innerHeight);
+           document.body.appendChild(renderer.domElement);
 
-        // Quantum Cube
-        const geometry = new THREE.BoxGeometry(2, 2, 2);
-        const material = new THREE.MeshBasicMaterial({ 
-            color: 0x00f3ff,
-            wireframe: true 
-        });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
+           // Quantum Core
+           const geometry = new THREE.IcosahedronGeometry(2, 3);
+           const material = new THREE.MeshPhongMaterial({
+               color: 0x00f3ff,
+               emissive: 0x003344,
+               wireframe: true
+           });
+           const core = new THREE.Mesh(geometry, material);
+           scene.add(core);
 
-        camera.position.z = 5;
+           // Lighting
+           const light = new THREE.PointLight(0x00f3ff, 1, 100);
+           light.position.set(10, 10, 10);
+           scene.add(light);
 
-        // Animation
-        function animate() {
-            requestAnimationFrame(animate);
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            renderer.render(scene, camera);
-        }
-        animate();
+           camera.position.z = 5;
 
-        // Mobile Touch Control
-        let touchStartX = 0;
-        document.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-        });
-        document.addEventListener('touchmove', (e) => {
-            cube.rotation.y += (e.touches[0].clientX - touchStartX) * 0.02;
-            touchStartX = e.touches[0].clientX;
-        });
-    </script>
-</body>
-</html>
+           // Animation
+           function animate() {
+               requestAnimationFrame(animate);
+               core.rotation.x += 0.01;
+               core.rotation.y += 0.01;
+               renderer.render(scene, camera);
+           }
+           animate();
+       </script>
+   </body>
+   </html>

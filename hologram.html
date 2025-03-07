@@ -1,50 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chrono Hologram</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <style>
-        body { margin: 0; overflow: hidden; }
-        canvas { display: block; }
-        #hud { position: fixed; top: 10px; left: 10px; color: #00f3ff; font-family: 'Orbitron', sans-serif; }
-    </style>
+    <style>body{margin:0;overflow:hidden}</style>
 </head>
 <body>
-    <div id="hud">SIMULATION ACTIVE</div>
     <script>
-        // Mobile-optimized hologram
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        const camera = new THREE.PerspectiveCamera(75, innerWidth/innerHeight,0.1,1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(innerWidth, innerHeight);
         document.body.appendChild(renderer.domElement);
-
-        // Quantum Core
-        const geometry = new THREE.IcosahedronGeometry(1.5);
-        const material = new THREE.MeshBasicMaterial({ 
-            color: 0x00f3ff,
-            wireframe: true
-        });
-        const core = new THREE.Mesh(geometry, material);
-        scene.add(core);
-
-        camera.position.z = 4;
-
-        // Touch Controls
+        
+        // Quantum Cube
+        const geometry = new THREE.BoxGeometry(2,2,2);
+        const material = new THREE.MeshBasicMaterial({color:0x00f3ff,wireframe:true});
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+        camera.position.z = 5;
+        
+        // Mobile Rotation
         let touchX = 0;
         document.ontouchstart = e => touchX = e.touches[0].clientX;
         document.ontouchmove = e => {
-            core.rotation.y += (e.touches[0].clientX - touchX) * 0.02;
+            cube.rotation.y += (e.touches[0].clientX - touchX)*0.02;
             touchX = e.touches[0].clientX;
         };
-
-        // Animation
+        
         function animate() {
             requestAnimationFrame(animate);
-            core.rotation.x += 0.01;
+            cube.rotation.x += 0.01;
             renderer.render(scene, camera);
         }
         animate();

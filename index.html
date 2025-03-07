@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='en' dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
+  
+  <!-- Cyberpunk CSS -->
+  <b:skin><![CDATA[
+    /* FONTS */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Orbitron', sans-serif !important;
+      color: #00f3ff !important;
+      text-shadow: 0 0 10px rgba(0,243,255,0.5);
+    }
+    
+    body {
+      font-family: 'Rajdhani', sans-serif !important;
+      background: #0a0a12;
+      color: #fff !important;
+      line-height: 1.6;
+    }
+
+    /* NEON EFFECTS */
+    a {
+      color: #ff003c !important;
+      text-decoration: none !important;
+      transition: 0.3s;
+    }
+    
+    a:hover {
+      text-shadow: 0 0 15px #ff003c;
+    }
+
+    /* HOLO GRID BACKGROUND */
+    body {
+      background-image: 
+        linear-gradient(rgba(0,243,255,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,243,255,0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    /* BLOGGER POST STYLING */
+    .post {
+      background: rgba(10,10,18,0.9);
+      border: 1px solid #00f3ff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .hologram-iframe { height: 300px; }
+    }
+  ]]></b:skin>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header style='text-align:center;padding:2rem;border-bottom:2px solid #00f3ff'>
+    <h1 style='font-size:2.5rem;margin:0'>AI FUTURESCAPE 2100</h1>
+    <p style='color:#8a2be2'>Simulating Tomorrow's Reality</p>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class='blog-posts'>
+    <b:section id='main' showaddelement='yes'>
+      <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'/>
+    </b:section>
+  </div>
+
+  <!-- HOLOGRAM IFRAME -->
+  <div style='margin:2rem auto;max-width:800px'>
+    <iframe 
+      src='https://YOUR-GITHUB-USERNAME.github.io/hologram' 
+      style='width:100%;height:500px;border:none;background:#000'
+      class='hologram-iframe'>
+    </iframe>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style='text-align:center;padding:2rem;border-top:2px solid #00f3ff'>
+    <p>© 2100 Chrono-Synapse</p>
+  </footer>
+
+  <!-- NEON HOVER SCRIPT -->
+  <script>
+  // Mobile-friendly hover effects
+  document.querySelectorAll('.post').forEach(post => {
+    post.addEventListener('touchstart', function() {
+      this.style.boxShadow = '0 0 20px rgba(0,243,255,0.3)';
+    });
+    post.addEventListener('touchend', function() {
+      this.style.boxShadow = 'none';
+    });
+  });
+  </script>
+</body>
+</html>

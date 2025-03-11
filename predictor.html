@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <style>
+    body { 
+      background: #000; 
+      color: #00f3ff;
+      font-family: 'Courier New', monospace;
+      padding: 20px;
+    }
+    #simulation {
+      border: 2px solid #00f3ff;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
 <body>
-  <h3>Enter Year:</h3>
-  <input type="number" id="year" placeholder="3000"/>
-  <button onclick="simulate()">Simulate</button>
-  <div id="result"></div>
+  <h2>🔮 FUTURE SIMULATOR 3000</h2>
+  
+  <input 
+    type="number" 
+    id="yearInput" 
+    placeholder="Enter target year (e.g., 2100)"
+    style="width: 80%; padding: 10px; background: #001a1a; color: #00f3ff; border: 1px solid #00f3ff;"
+  >
+  
+  <button onclick="runSimulation()" 
+    style="margin-top: 10px; padding: 10px 20px; background: #002b2b; color: #00f3ff; border: 1px solid #00f3ff;">
+    SIMULATE
+  </button>
+
+  <div id="simulation"></div>
 
   <script>
-    function simulate() {
-      const year = document.getElementById('year').value;
-      document.getElementById('result').innerHTML = 
-        `Simulating ${year}... (AI analysis coming soon)`;
+    function runSimulation() {
+      const year = document.getElementById('yearInput').value;
+      const scenarios = [
+        `YEAR ${year}: AI achieves quantum supremacy.`,
+        `YEAR ${year}: Mars colony becomes self-sustaining.`,
+        `YEAR ${year}: Human-machine interfaces become mandatory.`
+      ];
+      
+      document.getElementById('simulation').innerHTML = `
+        <h3>📡 Scanning Temporal Nexus...</h3>
+        <div style="border-left: 3px solid #00f3ff; padding-left: 15px; margin-top: 15px;">
+          ${scenarios[Math.floor(Math.random()*scenarios.length)]}
+        </div>
+      `;
     }
   </script>
 </body>

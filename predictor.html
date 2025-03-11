@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Enter Year:</h3>
+  <input type="number" id="year" placeholder="3000"/>
+  <button onclick="simulate()">Simulate</button>
+  <div id="result"></div>
+
+  <script>
+    function simulate() {
+      const year = document.getElementById('year').value;
+      document.getElementById('result').innerHTML = 
+        `Simulating ${year}... (AI analysis coming soon)`;
+    }
+  </script>
+</body>
+</html>

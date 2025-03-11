@@ -1,27 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ChronoSynapse Labs</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ChronoSynapse Quantum Mobile</title>
+  
+  <!-- Quantum Core CSS -->
   <style>
-    body { background: #000; color: #0f0; font-family: monospace; }
-    .container { max-width: 800px; margin: auto; padding: 20px; }
-    a { color: #0ff; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>🛰️ ChronoSynapse Labs</h1>
-    <p>Open-source tools for the future. Powered by AI.</p>
-    
-    <!-- Link to Your Blogger Site -->
-    <a href="https://chronoSynapse.blogspot.com">Visit the Blog</a>
+    :root {
+      --neon-blue: #00f3ff;
+      --matrix-green: #0f0;
+      --cyber-red: #ff073a;
+    }
 
-    <!-- Embedded Tools -->
-    <h2>🛠️ Tools</h2>
-    <ul>
-      <li><a href="predictor.html">Future Predictor 3000</a></li>
-      <li><a href="jarvis.js">JARVIS AI Terminal</a></li>
-    </ul>
+    /* Quantum Field Animation */
+    @keyframes quantumPulse {
+      0% { opacity: 0.1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.2); }
+      100% { opacity: 0.1; transform: scale(1); }
+    }
+
+    .quantum-glow {
+      position: fixed;
+      width: 150vw;
+      height: 150vh;
+      background: radial-gradient(circle, 
+        rgba(0, 243, 255, 0.1) 0%, 
+        rgba(0, 0, 0, 0) 70%);
+      animation: quantumPulse 4s infinite;
+      pointer-events: none;
+      z-index: -2;
+    }
+  </style>
+
+  <!-- Three.js Quantum Globe -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    function initQuantumGlobe() {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      // Quantum Globe Core
+      const geometry = new THREE.IcosahedronGeometry(2, 4);
+      const material = new THREE.MeshPhongMaterial({
+        color: 0x00f3ff,
+        emissive: 0x0f0,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.7
+      });
+      
+      const globe = new THREE.Mesh(geometry, material);
+      scene.add(globe);
+
+      // Quantum Network Particles
+      const particles = new THREE.BufferGeometry();
+      const particlePositions = new Float32Array(5000 * 3);
+      for(let i = 0; i < 15000; i += 3) {
+        particlePositions[i] = (Math.random() - 0.5) * 10;
+        particlePositions[i+1] = (Math.random() - 0.5) * 10;
+        particlePositions[i+2] = (Math.random() - 0.5) * 10;
+      }
+      particles.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+      
+      const particleMaterial = new THREE.PointsMaterial({
+        size: 0.05,
+        color: 0x0f0,
+        transparent: true
+      });
+      
+      const particleSystem = new THREE.Points(particles, particleMaterial);
+      scene.add(particleSystem);
+
+      camera.position.z = 5;
+
+      // Animation Loop
+      function animate() {
+        requestAnimationFrame(animate);
+        globe.rotation.x += 0.001;
+        globe.rotation.y += 0.002;
+        particleSystem.rotation.y += 0.001;
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+  </script>
+</head>
+
+<body onload="initQuantumGlobe()">
+  <!-- Quantum Field Background -->
+  <div class="quantum-glow"></div>
+
+  <!-- AR Interface -->
+  <div id="ar-interface" style="position:fixed;top:20px;left:20px;z-index:1000;">
+    <div style="border:2px solid #0f0;padding:10px;background:rgba(0,0,0,0.8);">
+      <p style="margin:0;color:#00f3ff;">QUANTUM NETWORK STATUS</p>
+      <div id="quantum-stats" style="color:#0f0;font-size:0.8em;">
+        > Entanglement: 98.7%<br>
+        > Qubits: 1.2M<br>
+        > Stability: ██████░░ 87%
+      </div>
+    </div>
   </div>
+
+  <!-- Gesture Controls -->
+  <script>
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    });
+    
+    document.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      if(Math.abs(touchEndX - touchStartX) > 50) {
+        document.getElementById('quantum-stats').style.display = 
+          document.getElementById('quantum-stats').style.display === 'none' ? 'block' : 'none';
+      }
+    });
+  </script>
+
+  <!-- Performance Optimizer -->
+  <script>
+    const throttle = (func, limit) => {
+      let lastFunc;
+      let lastRan;
+      return function() {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+          func.apply(context, args);
+          lastRan = Date.now();
+        } else {
+          clearTimeout(lastFunc);
+          lastFunc = setTimeout(() => {
+            if ((Date.now() - lastRan) >= limit) {
+              func.apply(context, args);
+              lastRan = Date.now();
+            }
+          }, limit - (Date.now() - lastRan));
+        }
+      };
+    };
+
+    window.addEventListener('resize', throttle(() => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }, 200));
+  </script>
 </body>
 </html>

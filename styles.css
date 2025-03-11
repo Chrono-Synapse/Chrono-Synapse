@@ -1,0 +1,15 @@
+/* Cyberpunk Global Styles */
+.user-query {
+  color: #00ff9d;
+  margin: 10px 0;
+  padding: 8px;
+  background: rgba(0, 50, 50, 0.3);
+}
+
+.ai-response {
+  color: #00f3ff;
+  border-left: 3px solid #00f3ff;
+  padding: 8px 15px;
+  margin: 10px 0;
+  background: rgba(0, 15, 30, 0.4);
+}

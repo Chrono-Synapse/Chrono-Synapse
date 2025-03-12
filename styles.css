@@ -1,15 +1,67 @@
-/* Cyberpunk Global Styles */
-.user-query {
-  color: #00ff9d;
-  margin: 10px 0;
-  padding: 8px;
-  background: rgba(0, 50, 50, 0.3);
+/* CYBERPUNK THEME */
+:root {
+  --neon-blue: #00f3ff;
+  --matrix-green: #00ff00;
+  --hologram-bg: linear-gradient(45deg, rgba(0, 243, 255, 0.1), rgba(0, 0, 0, 0.9));
 }
 
-.ai-response {
-  color: #00f3ff;
-  border-left: 3px solid #00f3ff;
-  padding: 8px 15px;
-  margin: 10px 0;
-  background: rgba(0, 15, 30, 0.4);
+body {
+  background: #000;
+  color: var(--neon-blue);
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.cyber-header {
+  background: var(--hologram-bg);
+  border-bottom: 3px solid var(--neon-blue);
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  text-shadow: 0 0 15px var(--neon-blue);
+}
+
+.content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.neon-button {
+  display: inline-block;
+  background: var(--hologram-bg);
+  border: 2px solid var(--neon-blue);
+  color: var(--neon-blue);
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.neon-button:hover {
+  background: var(--neon-blue);
+  color: #000;
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.output-text {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px var(--matrix-green);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--hologram-bg);
+  border-top: 2px solid var(--neon-blue);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

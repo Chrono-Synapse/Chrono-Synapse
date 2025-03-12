@@ -1,37 +1,22 @@
-
----
-
-### **3. `docs/index.html`**
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ChronoSynapse Labs</title>
-  <link rel="stylesheet" href="./styles/cyber.css">
-  <script src="./scripts/matrix.js" defer></script>
-  <script src="./scripts/jarvis.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrono Synapse</title>
+  <link rel="stylesheet" href="styles/cyber.css">
 </head>
-
 <body>
   <!-- Matrix Rain Background -->
   <canvas id="matrix-canvas"></canvas>
 
-  <!-- Main Content -->
-  <div class="cyber-frame">
-    <h1 class="neon-pulse">🛸 CHRONOSYNAPSE</h1>
-    
-    <div class="quantum-console">
-      <div id="jarvis-terminal" class="hologram">
-        <p>JARVIS TERMINAL ONLINE</p>
-      </div>
-      <input type="text" id="jarvis-input" placeholder="JARVIS COMMAND LINE..." />
-    </div>
-    
-    <div class="temporal-tools">
-      <button class="cyber-button" data-action="simulate">INITIATE TEMPORAL SCAN</button>
-      <button class="cyber-button" data-action="quantum">ACCESS QUANTUM LAB</button>
-    </div>
+  <!-- Overlay Content -->
+  <div class="overlay">
+    <h1 class="neon-title">CHRONO SYNAPSE</h1>
+    <p>Welcome to the future.</p>
   </div>
+
+  <!-- Script -->
+  <script src="scripts/matrix.js"></script>
 </body>
 </html>

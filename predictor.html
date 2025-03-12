@@ -7,21 +7,39 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Matrix Rain Background -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Header -->
   <div class="cyber-header">
     <h1>🔮 FUTURE SIMULATOR</h1>
     <p>AI-Powered Predictions for Your Future</p>
   </div>
 
+  <!-- Main Content -->
   <div class="content">
     <h2>Predict Your Destiny</h2>
     <button id="predict-btn" class="neon-button">Generate Prediction</button>
     <p id="prediction-output" class="output-text">Your prediction will appear here...</p>
   </div>
 
+  <!-- Footer -->
   <footer>
     <p>⚡ Powered by Temporal Core v9.4.2 &amp; Quantum Lab</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
+  <script>
+    document.getElementById('predict-btn').addEventListener('click', () => {
+      const predictions = [
+        "You will discover a hidden talent.",
+        "A major technological breakthrough will occur in 2024.",
+        "India's GDP will double by 2030."
+      ];
+      const randomPrediction = predictions[Math.floor(Math.random() * predictions.length)];
+      document.getElementById('prediction-output').textContent = randomPrediction;
+    });
+  </script>
 </body>
 </html>

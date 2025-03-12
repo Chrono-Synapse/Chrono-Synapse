@@ -1,7 +1,10 @@
 class MatrixRain {
   constructor(canvasId) {
     this.canvas = document.getElementById(canvasId);
-    if (!this.canvas) return; // Ensure canvas exists
+    if (!this.canvas) {
+      console.error("Canvas element not found!");
+      return;
+    }
 
     this.ctx = this.canvas.getContext('2d');
     this.chars = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポ';
@@ -43,4 +46,5 @@ class MatrixRain {
   }
 }
 
+// Initialize MatrixRain
 new MatrixRain('matrix-canvas');

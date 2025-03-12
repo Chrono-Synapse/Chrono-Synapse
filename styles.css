@@ -5,6 +5,7 @@
   --hologram-bg: linear-gradient(45deg, rgba(0, 243, 255, 0.1), rgba(0, 0, 0, 0.9));
 }
 
+/* General Styles */
 body {
   background: #000;
   color: var(--neon-blue);
@@ -14,6 +15,17 @@ body {
   overflow-x: hidden;
 }
 
+/* Matrix Canvas */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Header */
 .cyber-header {
   background: var(--hologram-bg);
   border-bottom: 3px solid var(--neon-blue);
@@ -21,14 +33,23 @@ body {
   text-align: center;
   backdrop-filter: blur(12px);
   text-shadow: 0 0 15px var(--neon-blue);
+  animation: hologram-glow 2s infinite alternate;
 }
 
+@keyframes hologram-glow {
+  0% { text-shadow: 0 0 10px var(--neon-blue); }
+  100% { text-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--matrix-green); }
+}
+
+/* Content */
 .content {
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
+/* Neon Buttons */
 .neon-button {
   display: inline-block;
   background: var(--hologram-bg);
@@ -42,20 +63,21 @@ body {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px var(--neon-blue);
+  animation: button-glow 1.5s infinite alternate;
+}
+
+@keyframes button-glow {
+  0% { box-shadow: 0 0 10px var(--neon-blue); }
+  100% { box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--matrix-green); }
 }
 
 .neon-button:hover {
   background: var(--neon-blue);
   color: #000;
-  box-shadow: 0 0 20px var(--neon-blue);
+  box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--matrix-green);
 }
 
-.output-text {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  text-shadow: 0 0 10px var(--matrix-green);
-}
-
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;

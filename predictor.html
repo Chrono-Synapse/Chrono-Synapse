@@ -1,53 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    body { 
-      background: #000; 
-      color: #00f3ff;
-      font-family: 'Courier New', monospace;
-      padding: 20px;
-    }
-    #simulation {
-      border: 2px solid #00f3ff;
-      padding: 20px;
-      margin-top: 20px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Simulator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>🔮 FUTURE SIMULATOR 3000</h2>
-  
-  <input 
-    type="number" 
-    id="yearInput" 
-    placeholder="Enter target year (e.g., 2100)"
-    style="width: 80%; padding: 10px; background: #001a1a; color: #00f3ff; border: 1px solid #00f3ff;"
-  >
-  
-  <button onclick="runSimulation()" 
-    style="margin-top: 10px; padding: 10px 20px; background: #002b2b; color: #00f3ff; border: 1px solid #00f3ff;">
-    SIMULATE
-  </button>
+  <div class="cyber-header">
+    <h1>🔮 FUTURE SIMULATOR</h1>
+    <p>AI-Powered Predictions for Your Future</p>
+  </div>
 
-  <div id="simulation"></div>
+  <div class="content">
+    <h2>Predict Your Destiny</h2>
+    <button id="predict-btn" class="neon-button">Generate Prediction</button>
+    <p id="prediction-output" class="output-text">Your prediction will appear here...</p>
+  </div>
 
-  <script>
-    function runSimulation() {
-      const year = document.getElementById('yearInput').value;
-      const scenarios = [
-        `YEAR ${year}: AI achieves quantum supremacy.`,
-        `YEAR ${year}: Mars colony becomes self-sustaining.`,
-        `YEAR ${year}: Human-machine interfaces become mandatory.`
-      ];
-      
-      document.getElementById('simulation').innerHTML = `
-        <h3>📡 Scanning Temporal Nexus...</h3>
-        <div style="border-left: 3px solid #00f3ff; padding-left: 15px; margin-top: 15px;">
-          ${scenarios[Math.floor(Math.random()*scenarios.length)]}
-        </div>
-      `;
-    }
-  </script>
+  <footer>
+    <p>⚡ Powered by Temporal Core v9.4.2 &amp; Quantum Lab</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

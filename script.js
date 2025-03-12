@@ -55,4 +55,46 @@ window.onload = () => {
   msg.pitch = 0.8;
   msg.rate = 1.1;
   speechSynthesis.speak(msg);
+};// Matrix Rain Animation
+const startMatrixRain = () => {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  document.body.prepend(canvas);
+
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.zIndex = '-1';
+
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+  const chars = '01';
+  const fontSize = 14;
+  const columns = Math.floor(width / fontSize);
+  const drops = Array(columns).fill(1);
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = '#0F0';
+    ctx.font = `${fontSize}px monospace`;
+
+    for (let i = 0; i < drops.length; i++) {
+      const char = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > height && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
 };
+
+window.onload = startMatrixRain;

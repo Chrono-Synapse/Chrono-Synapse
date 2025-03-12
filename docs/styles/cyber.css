@@ -1,0 +1,80 @@
+:root {
+  --neon-blue: #00f3ff;
+  --matrix-green: #0f0;
+  --cyber-red: #ff073a;
+  --hologram-bg: linear-gradient(45deg, rgba(0, 243, 255, 0.1), rgba(0, 0, 0, 0.9));
+}
+
+/* General Styles */
+body {
+  background: #000;
+  color: var(--neon-blue);
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Matrix Canvas */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Cyber Frame */
+.cyber-frame {
+  background: var(--hologram-bg);
+  border: 3px solid var(--neon-blue);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Neon Pulse Animation */
+.neon-pulse {
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+@keyframes neonGlow {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
+}
+
+/* Hologram Panel */
+.hologram {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--matrix-green);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  color: var(--matrix-green);
+}
+
+/* Cyber Buttons */
+.cyber-button {
+  background: var(--hologram-bg);
+  border: 2px solid var(--neon-blue);
+  color: var(--neon-blue);
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--neon-blue);
+  cursor: pointer;
+}
+
+.cyber-button:hover {
+  background: var(--neon-blue);
+  color: #000;
+  box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--matrix-green);
+}

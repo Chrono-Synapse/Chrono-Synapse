@@ -1,6 +1,8 @@
 // Matrix Rain Animation
 const startMatrixRain = () => {
   const canvas = document.getElementById('matrix-canvas');
+  if (!canvas) return;
+
   const ctx = canvas.getContext('2d');
 
   canvas.width = window.innerWidth;
@@ -37,8 +39,14 @@ const startMatrixRain = () => {
 
 // JARVIS Voiceover
 const activateVoiceover = () => {
+  if (!('speechSynthesis' in window)) {
+    console.warn('Speech synthesis not supported in this browser.');
+    return;
+  }
+
   const msg = new SpeechSynthesisUtterance("Chrono Synapse online. The future is in your hands.");
-  msg.voice = speechSynthesis.getVoices().find(v => v.name === "Samantha");
+  const voices = speechSynthesis.getVoices();
+  msg.voice = voices.find(v => v.name === "Samantha") || voices[0];
   msg.pitch = 0.8;
   msg.rate = 1.1;
   speechSynthesis.speak(msg);
@@ -86,5 +94,7 @@ const startNeuralAnimation = () => {
 window.onload = () => {
   startMatrixRain();
   activateVoiceover();
-  startNeuralAnimation();
+  if (document.getElementById('neural-canvas')) {
+    startNeuralAnimation();
+  }
 };

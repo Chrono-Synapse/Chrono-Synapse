@@ -1,42 +1,37 @@
+
+---
+
+### **3. `docs/index.html`**
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chrono Synapse</title>
-  <link rel="stylesheet" href="styles/cyber.css">
+  <title>ChronoSynapse Labs</title>
+  <link rel="stylesheet" href="./styles/cyber.css">
+  <script src="./scripts/matrix.js" defer></script>
+  <script src="./scripts/jarvis.js" defer></script>
 </head>
+
 <body>
   <!-- Matrix Rain Background -->
   <canvas id="matrix-canvas"></canvas>
 
-  <!-- Overlay Container (Ensures content stays above matrix) -->
-  <div class="overlay">
-    <!-- Header -->
-    <div class="cyber-header">
-      <h1 class="neon-title">CHRONO SYNAPSE</h1>
-      <p>[[ TEMPORAL PREDICTION SYSTEM ONLINE ]]</p>
-    </div>
-
-    <!-- Main Content -->
-    <main class="quantum-interface">
-      <h2 class="glow-text">🔮 Welcome to the Future</h2>
-      <p class="glow-text">The future is no longer uncertain. Chrono Synapse brings you AI-powered predictions, neural interfaces, and tools to navigate tomorrow.</p>
-      
-      <div class="action-buttons">
-        <a href="predictor.html" class="neon-button">Start Predicting</a>
-        <a href="neural.html" class="neon-button">Neural Interface</a>
+  <!-- Main Content -->
+  <div class="cyber-frame">
+    <h1 class="neon-pulse">🛸 CHRONOSYNAPSE</h1>
+    
+    <div class="quantum-console">
+      <div id="jarvis-terminal" class="hologram">
+        <p>JARVIS TERMINAL ONLINE</p>
       </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <p>⚡ Powered by Temporal Core v9.4.2 &amp; Quantum Lab</p>
-    </footer>
+      <input type="text" id="jarvis-input" placeholder="JARVIS COMMAND LINE..." />
+    </div>
+    
+    <div class="temporal-tools">
+      <button class="cyber-button" data-action="simulate">INITIATE TEMPORAL SCAN</button>
+      <button class="cyber-button" data-action="quantum">ACCESS QUANTUM LAB</button>
+    </div>
   </div>
-
-  <!-- Scripts -->
-  <script src="scripts/matrix.js"></script>
-  <script src="scripts/jarvis.js"></script>
 </body>
 </html>

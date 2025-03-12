@@ -4,32 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chrono Synapse</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/cyber.css">
 </head>
 <body>
   <!-- Matrix Rain Background -->
   <canvas id="matrix-canvas"></canvas>
 
-  <!-- Header -->
-  <div class="cyber-header">
-    <h1>CHRONO SYNAPSE</h1>
-    <p>[[ TEMPORAL PREDICTION SYSTEM ONLINE ]]</p>
-  </div>
+  <!-- Overlay Container (Ensures content stays above matrix) -->
+  <div class="overlay">
+    <!-- Header -->
+    <div class="cyber-header">
+      <h1 class="neon-title">CHRONO SYNAPSE</h1>
+      <p>[[ TEMPORAL PREDICTION SYSTEM ONLINE ]]</p>
+    </div>
 
-  <!-- Main Content -->
-  <div class="content">
-    <h2>🔮 Welcome to the Future</h2>
-    <p>The future is no longer uncertain. Chrono Synapse brings you AI-powered predictions, neural interfaces, and tools to navigate tomorrow.</p>
-    <a href="predictor.html" class="neon-button">Start Predicting</a>
-    <a href="neural.html" class="neon-button">Neural Interface</a>
-  </div>
+    <!-- Main Content -->
+    <main class="quantum-interface">
+      <h2 class="glow-text">🔮 Welcome to the Future</h2>
+      <p class="glow-text">The future is no longer uncertain. Chrono Synapse brings you AI-powered predictions, neural interfaces, and tools to navigate tomorrow.</p>
+      
+      <div class="action-buttons">
+        <a href="predictor.html" class="neon-button">Start Predicting</a>
+        <a href="neural.html" class="neon-button">Neural Interface</a>
+      </div>
+    </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>⚡ Powered by Temporal Core v9.4.2 &amp; Quantum Lab</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <p>⚡ Powered by Temporal Core v9.4.2 &amp; Quantum Lab</p>
+    </footer>
+  </div>
 
   <!-- Scripts -->
-  <script src="script.js"></script>
+  <script src="scripts/matrix.js"></script>
+  <script src="scripts/jarvis.js"></script>
 </body>
 </html>

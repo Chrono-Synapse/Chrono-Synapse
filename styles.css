@@ -1,0 +1,109 @@
+:root {
+    --neon-cyan: #00f9ff;
+    --neon-purple: #bc13fe;
+    --cyber-dark: #0a0a12;
+    --matrix-green: #00ff00;
+    --header-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cyber-dark);
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    overflow-x: hidden;
+}
+
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.cyber-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 30px var(--neon-cyan);
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.cyber-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px var(--neon-cyan);
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cyber-card {
+    background: rgba(0,0,0,0.8);
+    border: 2px solid var(--neon-cyan);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.cyber-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px var(--neon-cyan);
+}
+
+.neon-button {
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 1rem 2rem;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.neon-button:hover {
+    background: var(--neon-cyan);
+    color: var(--cyber-dark);
+    box-shadow: 0 0 30px var(--neon-cyan);
+}
+
+.cyber-footer {
+    background: rgba(0,0,0,0.95);
+    border-top: 2px solid var(--neon-cyan);
+    padding: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .post-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .cyber-header {
+        padding: 0.5rem;
+    }
+    
+    .cyber-logo {
+        font-size: 1.5rem;
+    }
+}

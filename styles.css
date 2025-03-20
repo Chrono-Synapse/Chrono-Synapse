@@ -1,68 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
+/* General Styling */
 body {
-    background-color: #000;
-    color: #0ff;
     font-family: 'Orbitron', sans-serif;
+    background-color: #000;
+    color: #00ffcc;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-.container {
-    text-align: center;
-    padding: 20px;
-}
-
+/* Welcome Text Styling */
 h1 {
+    color: #00ffcc;
+    text-align: center;
     font-size: 2.5rem;
-    color: #0ff;
-    text-shadow: 0 0 20px #0ff;
-    animation: glow 1.5s ease-in-out infinite alternate;
+    margin-top: 20px;
+    text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
 }
 
-.loading p {
+/* Status Text Styling */
+p {
+    color: #00ffcc;
+    text-align: center;
     font-size: 1.2rem;
-    margin: 10px 0;
+    margin: 10px;
+}
+
+/* Status Highlight */
+.status {
+    font-weight: bold;
     color: #00ffcc;
-    animation: fadeIn 2s ease-in-out;
 }
 
-.loading p:nth-child(odd) {
-    color: #00ffcc;
+/* Emoji Style */
+.checkmark {
+    font-size: 1.5rem;
+    vertical-align: middle;
 }
 
-.loading p:nth-child(even) {
-    color: #0ff;
+/* Matrix Animation Background */
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 204, 0.1) 0px,
+        rgba(0, 255, 204, 0.1) 1px,
+        transparent 1px,
+        transparent 5px
+    );
+    z-index: -1;
+    opacity: 0.3;
+    animation: glitch 1.5s infinite linear;
 }
 
-strong {
-    color: #00ffcc;
-    text-shadow: 0 0 15px #00ffcc;
+/* Keyframes for Background Animation */
+@keyframes glitch {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
 }
 
+/* Footer Quote Styling */
 .quote {
+    color: #00ffcc;
+    font-style: italic;
+    text-align: center;
     margin-top: 30px;
-    font-size: 1.2rem;
-    color: #0ff;
-    opacity: 0.8;
-    text-shadow: 0 0 15px #0ff;
+    text-shadow: 0 0 10px #00ffcc;
 }
 
-@keyframes glow {
-    from {
-        text-shadow: 0 0 20px #0ff;
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
     }
-    to {
-        text-shadow: 0 0 40px #00ffcc;
-    }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+    p {
+        font-size: 1rem;
     }
 }

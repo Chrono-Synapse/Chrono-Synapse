@@ -1,54 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chrono Synapse</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-    <canvas id="matrixCanvas"></canvas>
-    
+
+    <!-- Header -->
     <header class="cyber-header">
-        <div class="header-container">
-            <h1 class="cyber-logo">Chrono Synapse</h1>
-            <nav class="cyber-nav">
-                <a href="#posts" class="neon-button">Posts</a>
-                <a href="https://github.com/chrono-synapse" 
-                   class="neon-button" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-            </nav>
-        </div>
+        <div class="title">Chrono Synapse</div>
+        <nav>
+            <a href="#posts">Posts</a>
+            <a href="https://chrono-synapse.github.io/Chrono-Synapse/" target="_blank">GitHub</a>
+        </nav>
     </header>
 
-    <main class="cyber-main">
-        <section id="posts" class="post-grid">
-            <!-- Blog posts will be dynamically inserted here -->
-        </section>
-
-        <section class="github-section">
-            <h2 class="section-title">Source Code Matrix</h2>
-            <a href="https://github.com/chrono-synapse" 
-               class="neon-button" 
-               target="_blank" 
-               rel="noopener noreferrer">
-                <i class="fas fa-terminal"></i> Access Codebase
-            </a>
-        </section>
-    </main>
-
-    <footer class="cyber-footer">
-        <div class="footer-content">
-            <p class="copyright">
-                © 2024 Chrono Synapse | Neural Network v2.3.1
-                <span class="status-indicator"></span>
-            </p>
+    <!-- Post Grid -->
+    <div class="post-grid">
+        <div class="cyber-card">
+            <h2>Interface</h2>
+            <p>Exploring neural network integration with quantum computing...</p>
         </div>
+        <div class="cyber-card">
+            <h2>AI & Spiritual Consciousness</h2>
+            <p>Bridging artificial intelligence with metaphysical concepts...</p>
+        </div>
+    </div>
+
+    <!-- Access Codebase Section -->
+    <div class="github-section">
+        <h2>Source Code Matrix</h2>
+        <a href="https://chrono-synapse.github.io/Chrono-Synapse/" target="_blank" class="btn-access-code">
+            >_ Access Codebase
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        © 2024 Chrono Synapse | Powered by Neural Networks  
+        [v2.3.1] | System Status: <span class="status">🟢 Operational</span>
     </footer>
 
     <script src="script.js"></script>

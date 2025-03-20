@@ -1,95 +1,68 @@
-/* Variables */
-:root {
-    --cyber-dark: #000a12;
-    --neon-cyan: #00ffff;
-    --matrix-green: #00ff00;
-    --header-height: 80px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 body {
-    background: var(--cyber-dark);
-    color: #fff;
-    font-family: 'Roboto Mono', monospace;
+    background-color: #000;
+    color: #0ff;
+    font-family: 'Orbitron', sans-serif;
     margin: 0;
-    padding-top: var(--header-height);
-    line-height: 1.6;
-    overflow-x: hidden;
+    padding: 0;
+    overflow: hidden;
 }
 
-.cyber-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    padding: 20px;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid var(--neon-cyan);
-}
-
-.title {
-    font-size: 1.8rem;
-    color: var(--neon-cyan);
-}
-
-nav a {
-    color: var(--matrix-green);
-    margin-left: 20px;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-nav a:hover {
-    color: var(--neon-cyan);
-}
-
-.post-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.cyber-card {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid var(--neon-cyan);
-    padding: 20px;
-    transition: transform 0.3s ease;
-}
-
-.cyber-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px var(--neon-cyan);
-}
-
-.github-section {
+.container {
     text-align: center;
-    margin-top: 40px;
-}
-
-.btn-access-code {
-    display: inline-block;
-    padding: 12px 24px;
-    background: var(--neon-cyan);
-    color: #000;
-    font-size: 1rem;
-    text-decoration: none;
-    border: 2px solid var(--neon-cyan);
-    transition: background 0.3s ease;
-}
-
-.btn-access-code:hover {
-    background: #000;
-    color: var(--neon-cyan);
-}
-
-.cyber-footer {
-    background: rgba(0, 0, 0, 0.95);
     padding: 20px;
-    text-align: center;
-    border-top: 2px solid var(--neon-cyan);
-    color: var(--matrix-green);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #0ff;
+    text-shadow: 0 0 20px #0ff;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.loading p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #00ffcc;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.loading p:nth-child(odd) {
+    color: #00ffcc;
+}
+
+.loading p:nth-child(even) {
+    color: #0ff;
+}
+
+strong {
+    color: #00ffcc;
+    text-shadow: 0 0 15px #00ffcc;
+}
+
+.quote {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #0ff;
+    opacity: 0.8;
+    text-shadow: 0 0 15px #0ff;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px #0ff;
+    }
+    to {
+        text-shadow: 0 0 40px #00ffcc;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

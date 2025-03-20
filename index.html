@@ -4,124 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chrono Synapse Codebase</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-        body {
-            background-color: #000;
-            color: #00ffcc;
-            font-family: 'Orbitron', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            perspective: 1000px;
-        }
-
-        .container {
-            text-align: center;
-            transform-style: preserve-3d;
-            animation: float 4s infinite alternate ease-in-out;
-        }
-
-        h1 {
-            font-size: 3rem;
-            text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-
-        .matrix-code {
-            font-size: 1.2rem;
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc;
-            white-space: pre-wrap;
-            overflow: hidden;
-            animation: type 4s steps(40) 1s forwards;
-            max-width: 90%;
-            margin: 20px auto;
-            opacity: 0;
-        }
-
-        .access-button {
-            background-color: #00ffcc;
-            color: #000;
-            padding: 15px 30px;
-            border: none;
-            font-size: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            box-shadow: 0 0 20px #00ffcc;
-            transition: background 0.3s ease;
-            border-radius: 5px;
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-
-        .access-button:hover {
-            background-color: #009999;
-            box-shadow: 0 0 30px #00ffcc;
-        }
-
-        @keyframes type {
-            from {
-                width: 0;
-                opacity: 1;
-            }
-            to {
-                width: 100%;
-                opacity: 1;
-            }
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #00ffcc;
-            }
-            to {
-                text-shadow: 0 0 30px #00ffcc, 0 0 50px #00ffcc;
-            }
-        }
-
-        @keyframes float {
-            from {
-                transform: translateY(-10px);
-            }
-            to {
-                transform: translateY(10px);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to the Chrono Synapse Codebase</h1>
-        <div class="matrix-code">
-            INITIALIZING AI CORE...<br>
-            ACCESSING QUANTUM MATRIX...<br>
-            DECODING NEURAL NETWORKS...<br>
-            LOADING FUTURE SIMULATION...<br>
-            <strong>STATUS:</strong> OPERATIONAL ✔️<br><br>
-            <em>“The future is not written. You are the architect.”</em>
-        </div>
-        <br>
-        <button class="access-button" onclick="showSecretMessage()">Uncover the Code</button>
-        <p id="secretMessage" style="display:none; color: #00ffcc; margin-top: 20px; font-size: 1.2rem;">
-            🔓 The Matrix has been unlocked. Welcome to the future.  
-        </p>
-    </div>
 
-    <script>
-        function showSecretMessage() {
-            const secretMessage = document.getElementById('secretMessage');
-            if (secretMessage.style.display === 'none') {
-                secretMessage.style.display = 'block';
-            } else {
-                secretMessage.style.display = 'none';
-            }
-        }
-    </script>
+<div class="container">
+    <h1>Welcome to the Chrono Synapse Codebase</h1>
+    <div class="loading">
+        <p>INITIALIZING AI CORE...</p>
+        <p>ACCESSING QUANTUM MATRIX...</p>
+        <p>DECODING NEURAL NETWORKS...</p>
+        <p>LOADING FUTURE SIMULATION...</p>
+        <p><strong>STATUS:</strong> OPERATIONAL ✅</p>
+    </div>
+    <div class="quote">
+        "The future is not written. You are the architect."
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

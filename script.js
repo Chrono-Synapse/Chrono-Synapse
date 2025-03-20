@@ -1,10 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Chrono Synapse is live!");
-
-    // Example interaction for future upgrades
-    document.querySelectorAll('.cyber-card').forEach(card => {
-        card.addEventListener('click', () => {
-            alert("Feature coming soon!");
-        });
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Chrono Synapse Codebase Initialized...');
+    
+    const loadingElements = document.querySelectorAll('.loading p');
+    
+    loadingElements.forEach((element, index) => {
+        setTimeout(() => {
+            element.style.opacity = '1';
+        }, index * 1000);
     });
 });
